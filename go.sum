@@ -1,5 +1,7 @@
 github.com/gastrodon/groudon v0.0.0-20200807044439-9a839998f60e h1:oxybwuqT+EArO7gaTlLSfsAecWkqvesIibuNM/kBVLw=
 github.com/gastrodon/groudon v0.0.0-20200807044439-9a839998f60e/go.mod h1:5pCqXI8gvquh7Lp7S3LOpUgQ32JXWdrIKums+zpPwjs=
+github.com/gastrodon/groudon v0.0.0-20200810225227-33d8da43a46d h1:ymso08KxnpwmB4m8VT8cwFbCeuai35P1zEP0/Ax3x0g=
+github.com/gastrodon/groudon v0.0.0-20200810225227-33d8da43a46d/go.mod h1:5pCqXI8gvquh7Lp7S3LOpUgQ32JXWdrIKums+zpPwjs=
 github.com/go-sql-driver/mysql v1.4.0/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
 github.com/go-sql-driver/mysql v1.5.0 h1:ozyZYNQW3x3HtqT1jira07DN2PArx2v7/mN66gGcHOs=
 github.com/go-sql-driver/mysql v1.5.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=

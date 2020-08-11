@@ -12,7 +12,7 @@ script:
     - go test ./... -count 1 -cover -coverprofile coverage.txt
     - bash <(curl -s https://codecov.io/bash)
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
-    - docker build . -t gastrodon/imonke-ban-service:"$TRAVIS_BRANCH"
-    - docker push gastrodon/imonke-ban-service:"$TRAVIS_BRANCH"
-    - docker tag gastrodon/imonke-ban-service:"$TRAVIS_BRANCH" gastrodon/imonke-ban-service:latest
-    - if [ "$TRAVIS_BRANCH" = "master" ]; then docker push gastrodon/imonke-ban-service:latest; fi
+    - docker build . -t gastrodon/imonke-bans-service:"$TRAVIS_BRANCH"
+    - docker push gastrodon/imonke-bans-service:"$TRAVIS_BRANCH"
+    - docker tag gastrodon/imonke-bans-service:"$TRAVIS_BRANCH" gastrodon/imonke-bans-service:latest
+    - if [ "$TRAVIS_BRANCH" = "master" ]; then docker push gastrodon/imonke-bans-service:latest; fi
