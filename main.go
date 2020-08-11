@@ -22,7 +22,8 @@ func main() {
 	groudon.RegisterMiddleware(middleware.RangeQueryParams)
 	groudon.RegisterMiddleware(MustModerator)
 
-	groudon.RegisterHandler("POST", `/$`, createBan)
+	groudon.RegisterHandler("POST", `^/$`, createBan)
+	groudon.RegisterHandler("GET", `^/id/`+groudon.UUID_PATTERN+`/?$`, readBan)
 
 	http.Handle("/", http.HandlerFunc(groudon.Route))
 	log.Fatal(http.ListenAndServe(":8000", nil))
