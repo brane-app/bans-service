@@ -20,7 +20,7 @@ func main() {
 	groudon.RegisterCatch(403, forbidden)
 	groudon.RegisterMiddleware(middleware.MustAuth)
 	groudon.RegisterMiddleware(middleware.RangeQueryParams)
-	groudon.RegisterMiddleware(MustModerator)
+	groudon.RegisterMiddleware(middleware.MustModerator)
 
 	groudon.RegisterHandler("POST", `^/$`, createBan)
 	groudon.RegisterHandler("GET", `^/id/`+groudon.UUID_PATTERN+`/?$`, readBan)
