@@ -19,12 +19,16 @@ github.com/imonke/monkebase v0.0.0-20201111191335-9958a22fd7b7 h1:TwppwPn7w07/9F
 github.com/imonke/monkebase v0.0.0-20201111191335-9958a22fd7b7/go.mod h1:ZfXu2Q+i8POwrgitRKY9YI2L+HeH7u2ZpGpBUdmlNgM=
 github.com/imonke/monkebase v0.0.0-20201112031310-8b05081cb292 h1:sMwUtT4hI4ki8fdabPGPMbufmD34D1ww/KSO564xIaM=
 github.com/imonke/monkebase v0.0.0-20201112031310-8b05081cb292/go.mod h1:ZfXu2Q+i8POwrgitRKY9YI2L+HeH7u2ZpGpBUdmlNgM=
+github.com/imonke/monkebase v0.0.0-20201212230209-6c87775a51b2 h1:88KH5+T+Z2MInFxCueAOW1PbSD6nQPuysCaxjsr2UNw=
+github.com/imonke/monkebase v0.0.0-20201212230209-6c87775a51b2/go.mod h1:ZfXu2Q+i8POwrgitRKY9YI2L+HeH7u2ZpGpBUdmlNgM=
 github.com/imonke/monkelib v0.0.0-20200718153650-0de4bf0665e9 h1:uELWKT7vQbCRl08ZJhir8dKGK0DBWk9v8N63MGOYbT4=
 github.com/imonke/monkelib v0.0.0-20200718153650-0de4bf0665e9/go.mod h1:TdzvZjJmpU0Ynyp+xjoWocur/IAhl3uhFMnpCtDp+E0=
 github.com/imonke/monkelib v0.0.0-20201111190605-89e83a0f1afa h1:y6SV1pD5/mD8cUaPE+zbNOEwt1AEwnIFOArY8PgBg+8=
 github.com/imonke/monkelib v0.0.0-20201111190605-89e83a0f1afa/go.mod h1:fMKAREH16VjiipDCbErwFYxd/lQlqAIQjE5HPgIp+ms=
 github.com/imonke/monkelib v0.0.0-20201112033513-60ad84f0ad9f h1:NPbCnPKUQTe/IhUTlUbnpOpkSBYbFoaUIeBmcSQk6VQ=
 github.com/imonke/monkelib v0.0.0-20201112033513-60ad84f0ad9f/go.mod h1:fMKAREH16VjiipDCbErwFYxd/lQlqAIQjE5HPgIp+ms=
+github.com/imonke/monkelib v0.0.0-20201210004800-3a34cb5eb437 h1:S5QuV0M82m4bVXYP7nU5w8GDkBAlgbdGb2PymVoifD4=
+github.com/imonke/monkelib v0.0.0-20201210004800-3a34cb5eb437/go.mod h1:fMKAREH16VjiipDCbErwFYxd/lQlqAIQjE5HPgIp+ms=
 github.com/imonke/monketype v0.0.0-20200716234900-cc809fe194ca/go.mod h1:+P64NN1CPbgU+kebfKsap37nZ8dR90c5SWO62/ZykUc=
 github.com/imonke/monketype v0.0.0-20200729032806-76932a99fc50 h1:8A9h4ozgVAZwQNU8btdWw3K1IOIk74rVj/5DPbc1KXM=
 github.com/imonke/monketype v0.0.0-20200729032806-76932a99fc50/go.mod h1:+P64NN1CPbgU+kebfKsap37nZ8dR90c5SWO62/ZykUc=
