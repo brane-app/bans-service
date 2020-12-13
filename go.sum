@@ -1,3 +1,9 @@
+git.gastrodon.io/imonke/monkebase v0.0.0-20201213065506-fa56cc5fe191 h1:j9F1PXr8VgadRx8LBWp3kERcvy7E4GBwui4RdGeJezo=
+git.gastrodon.io/imonke/monkebase v0.0.0-20201213065506-fa56cc5fe191/go.mod h1:/67JIA66siHa717mkbgahnFZs9m+XOn5TFNuuIwtOEg=
+git.gastrodon.io/imonke/monkelib v0.0.0-20201213070540-43927e1603c9 h1:9p0WP/yqApYt9ltw7eugZhCkGVlkKcyXzfDhJZTJWhA=
+git.gastrodon.io/imonke/monkelib v0.0.0-20201213070540-43927e1603c9/go.mod h1:ci6chybIAX9XGpmG3oQYJJni/c4NzAJN14CIFeuABkI=
+git.gastrodon.io/imonke/monketype v0.0.0-20201213055509-5f764755b22d h1:6H3q6KguismcdYW8I6na/QZVYm+jfD49t8HlFcF0S+I=
+git.gastrodon.io/imonke/monketype v0.0.0-20201213055509-5f764755b22d/go.mod h1:caFw4qbdFJb/Sf+Y9MOyttX3SOo6aMLVsM6w6RJ78bM=
 github.com/gastrodon/groudon v0.0.0-20200807044439-9a839998f60e h1:oxybwuqT+EArO7gaTlLSfsAecWkqvesIibuNM/kBVLw=
 github.com/gastrodon/groudon v0.0.0-20200807044439-9a839998f60e/go.mod h1:5pCqXI8gvquh7Lp7S3LOpUgQ32JXWdrIKums+zpPwjs=
 github.com/gastrodon/groudon v0.0.0-20200810225227-33d8da43a46d h1:ymso08KxnpwmB4m8VT8cwFbCeuai35P1zEP0/Ax3x0g=
@@ -14,6 +20,7 @@ github.com/google/uuid v1.1.2/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+
 github.com/imonke/monkebase v0.0.0-20200717040938-ff87d755de3e/go.mod h1:tnl8UuA/8tmi6FtaOpRkQpzEcnMzqmuaspow2zofsvY=
 github.com/imonke/monkebase v0.0.0-20200729040815-7b886535f0f7 h1:uP0pTRkjCrfIadiGjb2vvqx+80Yp071VzfSMWmRDPSo=
 github.com/imonke/monkebase v0.0.0-20200729040815-7b886535f0f7/go.mod h1:4LVGEd9tPFV87yLMhJzpsHz5qxWiJZ8DozqUgUW5/EU=
+github.com/imonke/monkebase v0.0.0-20201111032832-5890c2b1cc4c h1:CK2A/9gjElPSW3g99+x3lp0knvI72NNs1BMFgqDY0h0=
 github.com/imonke/monkebase v0.0.0-20201111032832-5890c2b1cc4c/go.mod h1:ZfXu2Q+i8POwrgitRKY9YI2L+HeH7u2ZpGpBUdmlNgM=
 github.com/imonke/monkebase v0.0.0-20201111191335-9958a22fd7b7 h1:TwppwPn7w07/9FfgpkbkrVBvk3zJD2+o7Wx+vEEWV/o=
 github.com/imonke/monkebase v0.0.0-20201111191335-9958a22fd7b7/go.mod h1:ZfXu2Q+i8POwrgitRKY9YI2L+HeH7u2ZpGpBUdmlNgM=
@@ -21,6 +28,8 @@ github.com/imonke/monkebase v0.0.0-20201112031310-8b05081cb292 h1:sMwUtT4hI4ki8f
 github.com/imonke/monkebase v0.0.0-20201112031310-8b05081cb292/go.mod h1:ZfXu2Q+i8POwrgitRKY9YI2L+HeH7u2ZpGpBUdmlNgM=
 github.com/imonke/monkebase v0.0.0-20201212230209-6c87775a51b2 h1:88KH5+T+Z2MInFxCueAOW1PbSD6nQPuysCaxjsr2UNw=
 github.com/imonke/monkebase v0.0.0-20201212230209-6c87775a51b2/go.mod h1:ZfXu2Q+i8POwrgitRKY9YI2L+HeH7u2ZpGpBUdmlNgM=
+github.com/imonke/monkebase v0.0.0-20201213053039-45e1ff68d8e4 h1:Jq8T4W2FqRsC7uI5H8ExUNJSUBGK2nRKHpwXnZSAEPw=
+github.com/imonke/monkebase v0.0.0-20201213053039-45e1ff68d8e4/go.mod h1:ZfXu2Q+i8POwrgitRKY9YI2L+HeH7u2ZpGpBUdmlNgM=
 github.com/imonke/monkelib v0.0.0-20200718153650-0de4bf0665e9 h1:uELWKT7vQbCRl08ZJhir8dKGK0DBWk9v8N63MGOYbT4=
 github.com/imonke/monkelib v0.0.0-20200718153650-0de4bf0665e9/go.mod h1:TdzvZjJmpU0Ynyp+xjoWocur/IAhl3uhFMnpCtDp+E0=
 github.com/imonke/monkelib v0.0.0-20201111190605-89e83a0f1afa h1:y6SV1pD5/mD8cUaPE+zbNOEwt1AEwnIFOArY8PgBg+8=
@@ -34,6 +43,7 @@ github.com/imonke/monketype v0.0.0-20200729032806-76932a99fc50 h1:8A9h4ozgVAZwQN
 github.com/imonke/monketype v0.0.0-20200729032806-76932a99fc50/go.mod h1:+P64NN1CPbgU+kebfKsap37nZ8dR90c5SWO62/ZykUc=
 github.com/imonke/monketype v0.0.0-20200811043329-f71d175a61ec h1:KAA67xaoJdo+b7mOzyais/Foz1PQ6vXZqpszhUNFDz4=
 github.com/imonke/monketype v0.0.0-20200811043329-f71d175a61ec/go.mod h1:+P64NN1CPbgU+kebfKsap37nZ8dR90c5SWO62/ZykUc=
+github.com/imonke/monketype v0.0.0-20201108235822-b761f9de344a h1:TSrGEgGtMUyGau9d+8XOr+y19RRfghvKnMojndAdQ+E=
 github.com/imonke/monketype v0.0.0-20201108235822-b761f9de344a/go.mod h1:+P64NN1CPbgU+kebfKsap37nZ8dR90c5SWO62/ZykUc=
 github.com/imonke/monketype v0.0.0-20201111232752-19268649a84b h1:5IyAY1H5mRLxMoCD68K99xNP1ZtuWCYHG8e9RD9bmu4=
 github.com/imonke/monketype v0.0.0-20201111232752-19268649a84b/go.mod h1:+P64NN1CPbgU+kebfKsap37nZ8dR90c5SWO62/ZykUc=

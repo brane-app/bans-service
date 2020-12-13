@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/gastrodon/groudon"
-	"github.com/imonke/monkebase"
-	"github.com/imonke/monkelib/middleware"
+	"git.gastrodon.io/imonke/monkebase"
+	"git.gastrodon.io/imonke/monkelib/middleware"
 
 	"log"
 	"net/http"

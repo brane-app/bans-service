@@ -1,0 +1,13 @@
+image: golang
+branches:
+    - .*
+matrix:
+    - env: MONKEBASE_CONNECTION=imonke@unix(/run/mysqld/mysqld.sock)/imonke
+before_script:
+    - sudo apt-get install -y mariadb-server mariadb-client
+    - sudo service mysql start
+    - sudo mysql -uroot -e"CREATE DATABASE imonke"
+    - sudo mysql -uroot -e"CREATE USER 'imonke'@'localhost'"
+    - sudo mysql -uroot -e"GRANT ALL PRIVILEGES ON imonke.* TO 'imonke'@'localhost'"
+script:
+    - go test ./... -cover -count 1
