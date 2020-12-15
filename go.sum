@@ -1,9 +1,15 @@
 git.gastrodon.io/imonke/monkebase v0.0.0-20201213065506-fa56cc5fe191 h1:j9F1PXr8VgadRx8LBWp3kERcvy7E4GBwui4RdGeJezo=
 git.gastrodon.io/imonke/monkebase v0.0.0-20201213065506-fa56cc5fe191/go.mod h1:/67JIA66siHa717mkbgahnFZs9m+XOn5TFNuuIwtOEg=
+git.gastrodon.io/imonke/monkebase v0.0.0-20201213235510-b41c3b0be731 h1:+8UtDGeP+0fNTcrfPMR5ZfBYf20qW20HtI5L7OGrPTM=
+git.gastrodon.io/imonke/monkebase v0.0.0-20201213235510-b41c3b0be731/go.mod h1:/67JIA66siHa717mkbgahnFZs9m+XOn5TFNuuIwtOEg=
 git.gastrodon.io/imonke/monkelib v0.0.0-20201213070540-43927e1603c9 h1:9p0WP/yqApYt9ltw7eugZhCkGVlkKcyXzfDhJZTJWhA=
 git.gastrodon.io/imonke/monkelib v0.0.0-20201213070540-43927e1603c9/go.mod h1:ci6chybIAX9XGpmG3oQYJJni/c4NzAJN14CIFeuABkI=
+git.gastrodon.io/imonke/monkelib v0.0.0-20201214024159-902d557ed57c h1:qpIEaERq/tbd1xYC32brY0NZQnaVQRzGXWwO0Nfjjts=
+git.gastrodon.io/imonke/monkelib v0.0.0-20201214024159-902d557ed57c/go.mod h1:zKZBGbgd/9zfhuo6JNS+3XntJVAWxmGou48ulDwA4jI=
 git.gastrodon.io/imonke/monketype v0.0.0-20201213055509-5f764755b22d h1:6H3q6KguismcdYW8I6na/QZVYm+jfD49t8HlFcF0S+I=
 git.gastrodon.io/imonke/monketype v0.0.0-20201213055509-5f764755b22d/go.mod h1:caFw4qbdFJb/Sf+Y9MOyttX3SOo6aMLVsM6w6RJ78bM=
+git.gastrodon.io/imonke/monketype v0.0.0-20201213235443-51eac0ed05d0 h1:uOvUXbrhDL6Mc+KSFEQuYGeP0H7ZM8+vAUijGRf+wt8=
+git.gastrodon.io/imonke/monketype v0.0.0-20201213235443-51eac0ed05d0/go.mod h1:caFw4qbdFJb/Sf+Y9MOyttX3SOo6aMLVsM6w6RJ78bM=
 github.com/gastrodon/groudon v0.0.0-20200807044439-9a839998f60e h1:oxybwuqT+EArO7gaTlLSfsAecWkqvesIibuNM/kBVLw=
 github.com/gastrodon/groudon v0.0.0-20200807044439-9a839998f60e/go.mod h1:5pCqXI8gvquh7Lp7S3LOpUgQ32JXWdrIKums+zpPwjs=
 github.com/gastrodon/groudon v0.0.0-20200810225227-33d8da43a46d h1:ymso08KxnpwmB4m8VT8cwFbCeuai35P1zEP0/Ax3x0g=

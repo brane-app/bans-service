@@ -3,9 +3,9 @@ module git.gastrodon.io/imonke/bans-service
 go 1.14
 
 require (
-	git.gastrodon.io/imonke/monkebase v0.0.0-20201213065506-fa56cc5fe191
-	git.gastrodon.io/imonke/monkelib v0.0.0-20201213070540-43927e1603c9
-	git.gastrodon.io/imonke/monketype v0.0.0-20201213055509-5f764755b22d
+	git.gastrodon.io/imonke/monkebase v0.0.0-20201213235510-b41c3b0be731
+	git.gastrodon.io/imonke/monkelib v0.0.0-20201214024159-902d557ed57c
+	git.gastrodon.io/imonke/monketype v0.0.0-20201213235443-51eac0ed05d0
 	github.com/gastrodon/groudon v0.0.0-20201111174124-cf23fec3827b
 	github.com/google/uuid v1.1.2
 	github.com/imonke/monkebase v0.0.0-20201213053039-45e1ff68d8e4 // indirect
