@@ -2,6 +2,8 @@ git.gastrodon.io/imonke/monkebase v0.0.0-20201213065506-fa56cc5fe191 h1:j9F1PXr8
 git.gastrodon.io/imonke/monkebase v0.0.0-20201213065506-fa56cc5fe191/go.mod h1:/67JIA66siHa717mkbgahnFZs9m+XOn5TFNuuIwtOEg=
 git.gastrodon.io/imonke/monkebase v0.0.0-20201213235510-b41c3b0be731 h1:+8UtDGeP+0fNTcrfPMR5ZfBYf20qW20HtI5L7OGrPTM=
 git.gastrodon.io/imonke/monkebase v0.0.0-20201213235510-b41c3b0be731/go.mod h1:/67JIA66siHa717mkbgahnFZs9m+XOn5TFNuuIwtOEg=
+git.gastrodon.io/imonke/monkebase v0.0.0-20201217065428-0484c458c067 h1:5+lcgYZ6CDmxAEJt5wOefOZ0YeMvVHgq33IMYVSQ/2U=
+git.gastrodon.io/imonke/monkebase v0.0.0-20201217065428-0484c458c067/go.mod h1:NTqAX9DoSIAoUzFXD97mbAxETIKOKgUeYp/yj19d34w=
 git.gastrodon.io/imonke/monkelib v0.0.0-20201213070540-43927e1603c9 h1:9p0WP/yqApYt9ltw7eugZhCkGVlkKcyXzfDhJZTJWhA=
 git.gastrodon.io/imonke/monkelib v0.0.0-20201213070540-43927e1603c9/go.mod h1:ci6chybIAX9XGpmG3oQYJJni/c4NzAJN14CIFeuABkI=
 git.gastrodon.io/imonke/monkelib v0.0.0-20201214024159-902d557ed57c h1:qpIEaERq/tbd1xYC32brY0NZQnaVQRzGXWwO0Nfjjts=
@@ -70,6 +72,8 @@ golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897 h1:pLI5jrR7OSLijeIDcmRxNm
 golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/crypto v0.0.0-20201208171446-5f87f3452ae9 h1:sYNJzB4J8toYPQTM6pAkcmBRgw9SnQKP9oXCHfgy604=
 golang.org/x/crypto v0.0.0-20201208171446-5f87f3452ae9/go.mod h1:jdWPYTVW3xRLrWPugEBEK3UY2ZEsg3UU495nc5E+M+I=
+golang.org/x/crypto v0.0.0-20201217014255-9d1352758620 h1:3wPMTskHO3+O6jqTEXyFcsnuxMQOqYSaHsDxcbUXpqA=
+golang.org/x/crypto v0.0.0-20201217014255-9d1352758620/go.mod h1:jdWPYTVW3xRLrWPugEBEK3UY2ZEsg3UU495nc5E+M+I=
 golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
 golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20190412213103-97732733099d/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
