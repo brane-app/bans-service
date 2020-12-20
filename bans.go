@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/gastrodon/groudon"
 	"git.gastrodon.io/imonke/monkebase"
+	"git.gastrodon.io/imonke/monkelib"
 	"git.gastrodon.io/imonke/monketype"
+	"github.com/gastrodon/groudon"
 
 	"net/http"
 	"strings"
@@ -54,5 +55,27 @@ func readBan(request *http.Request) (code int, r_map map[string]interface{}, err
 
 	code = 200
 	r_map = map[string]interface{}{"ban": ban.Map()}
+	return
+}
+
+func readBansOfUser(request *http.Request) (code int, r_map map[string]interface{}, err error) {
+	var parts []string = monkelib.SplitPath(request.URL.Path)
+	var query map[string]interface{} = request.Context().Value("query").(map[string]interface{})
+
+	var ID string = parts[len(parts)-1]
+	var before string = query["before"].(string)
+	var size int = query["size"].(int)
+
+	var bans []monketype.Ban
+	if bans, size, err = monkebase.ReadBansOfUser(ID, before, size); err != nil {
+		return
+	}
+
+	code = 200
+	r_map = map[string]interface{}{
+		"bans": bans,
+		"size": map[string]int{"bans": size},
+	}
+
 	return
 }

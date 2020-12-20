@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/google/uuid"
 	"git.gastrodon.io/imonke/monkebase"
 	"git.gastrodon.io/imonke/monketype"
+	"github.com/google/uuid"
 
 	"bytes"
 	"context"
