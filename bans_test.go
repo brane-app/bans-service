@@ -291,3 +291,104 @@ func Test_readBan_nosuchban(test *testing.T) {
 		test.Errorf("got code %d", code)
 	}
 }
+
+func Test_readBansOfUser_under(test *testing.T) {
+	var banned string = uuid.New().String()
+
+	var size, index int = 10, 0
+	for size != index {
+		monkebase.WriteBan(monketype.NewBan(banner.ID, banned, "", 0, false).Map())
+		monkebase.WriteBan(monketype.NewBan(banner.ID, uuid.New().String(), "", 0, false).Map())
+		index++
+	}
+
+	var request *http.Request
+	var err error
+	if request, err = http.NewRequest("GET", "/user/id/"+banned, nil); err != nil {
+		test.Fatal(err)
+	}
+
+	size = 5
+	request = request.WithContext(
+		context.WithValue(
+			context.TODO(),
+			"query",
+			map[string]interface{}{
+				"before": "",
+				"size":   size,
+			},
+		),
+	)
+
+	var code int
+	var r_map map[string]interface{}
+	if code, r_map, err = readBansOfUser(request); err != nil {
+		test.Fatal(err)
+	}
+
+	if code != 200 {
+		test.Errorf("got code %d", code)
+	}
+
+	var size_fetched int = r_map["size"].(map[string]int)["bans"]
+	var bans []monketype.Ban = r_map["bans"].([]monketype.Ban)
+
+	if size != size_fetched {
+		test.Errorf("incorrect size fetched, %d != %d", size, size_fetched)
+	}
+
+	if size != len(bans) {
+		test.Errorf("incorrect bans length fetched, %d != %d", size, len(bans))
+	}
+
+	test.Errorf("%+v", r_map)
+}
+
+func Test_readBansOfUser_over(test *testing.T) {
+	var banned string = uuid.New().String()
+
+	var size, index int = 10, 0
+	for size != index {
+		monkebase.WriteBan(monketype.NewBan(banner.ID, banned, "", 0, false).Map())
+		monkebase.WriteBan(monketype.NewBan(banner.ID, uuid.New().String(), "", 0, false).Map())
+		index++
+	}
+
+	var request *http.Request
+	var err error
+	if request, err = http.NewRequest("GET", "/user/id/"+banned, nil); err != nil {
+		test.Fatal(err)
+	}
+
+	request = request.WithContext(
+		context.WithValue(
+			context.TODO(),
+			"query",
+			map[string]interface{}{
+				"before": "",
+				"size":   50,
+			},
+		),
+	)
+
+	var code int
+	var r_map map[string]interface{}
+	if code, r_map, err = readBansOfUser(request); err != nil {
+		test.Fatal(err)
+	}
+
+	if code != 200 {
+		test.Errorf("got code %d", code)
+	}
+
+	var size_fetched int = r_map["size"].(map[string]int)["bans"]
+	var bans []monketype.Ban = r_map["bans"].([]monketype.Ban)
+
+	if size != size_fetched {
+		test.Errorf("incorrect size fetched, %d != %d", size, size_fetched)
+	}
+
+	if size != len(bans) {
+		test.Errorf("incorrect bans length fetched, %d != %d", size, len(bans))
+	}
+}
