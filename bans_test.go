@@ -340,8 +340,6 @@ func Test_readBansOfUser_under(test *testing.T) {
 	if size != len(bans) {
 		test.Errorf("incorrect bans length fetched, %d != %d", size, len(bans))
 	}
-
-	test.Errorf("%+v", r_map)
 }
 
 func Test_readBansOfUser_over(test *testing.T) {
