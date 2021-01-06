@@ -1,0 +1,18 @@
+FROM golang:alpine as builder
+
+WORKDIR /build
+COPY . .
+
+ARG GOOS="linux"
+ARG GOARCH="arm"
+ARG GOARM="7"
+RUN go get -u ./... && \
+    GOOS=linux GOARCH=$GOARCH go build -ldflags="-w -s" -o build
+
+FROM arm32v7/alpine:latest
+
+WORKDIR /build
+COPY --from=builder /build/build .
+
+ENV MONKEBASE_CONNECTION ""
+ENTRYPOINT ./build
