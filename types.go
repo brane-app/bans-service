@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/gastrodon/groudon"
+	"github.com/gastrodon/groudon/v2"
 
 	"fmt"
 )

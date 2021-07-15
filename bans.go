@@ -4,7 +4,7 @@ import (
 	"github.com/brane-app/database-library"
 	"github.com/brane-app/tools-library"
 	"github.com/brane-app/types-library"
-	"github.com/gastrodon/groudon"
+	"github.com/gastrodon/groudon/v2"
 
 	"net/http"
 	"strings"
