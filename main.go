@@ -1,36 +1,19 @@
 package main
 
 import (
-	"git.gastrodon.io/imonke/monkebase"
-	"git.gastrodon.io/imonke/monkelib/middleware"
-	"github.com/gastrodon/groudon"
+	"github.com/brane-app/database-library"
+	"github.com/gastrodon/groudon/v2"
 
 	"log"
 	"net/http"
 	"os"
 )
 
-const (
-	readBanRoute        = "^/id/" + groudon.UUID_PATTERN + "/?$"
-	readBansOfUserRoute = "^/user/id/" + groudon.UUID_PATTERN + "/?$"
-)
-
-var (
-	forbidden = map[string]interface{}{"error": "forbidden"}
-)
-
 func main() {
-	monkebase.Connect(os.Getenv("MONKEBASE_CONNECTION"))
+	database.Connect(os.Getenv("DATABASE_CONNECTION"))
 
-	groudon.RegisterCatch(403, forbidden)
-	groudon.RegisterMiddleware(middleware.MustAuth)
-	groudon.RegisterMiddleware(middleware.MustModerator)
-	groudon.RegisterMiddlewareRoute([]string{"GET"}, readBansOfUserRoute, middleware.PaginationParams)
+	register_handlers()
 
-	groudon.RegisterHandler("POST", `^/$`, createBan)
-	groudon.RegisterHandler("GET", readBanRoute, readBan)
-	groudon.RegisterHandler("GET", readBansOfUserRoute, readBansOfUser)
-
-	http.Handle("/", http.HandlerFunc(groudon.Route))
+	http.Handle(os.Getenv("PATH_PREFIX")+"/", http.HandlerFunc(groudon.Route))
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
