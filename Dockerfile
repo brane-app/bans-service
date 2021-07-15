@@ -4,13 +4,14 @@ WORKDIR /build
 COPY . .
 
 ARG GOARCH="amd64"
+ARG GOOS="linux"
 RUN go get -u ./... && \
-    GOOS=linux GOARCH=$GOARCH go build -ldflags="-w -s" -o build
+    GOOS=$GOOS GOARCH=$GOARCH go build -ldflags="-w -s" -o build
 
 FROM alpine:latest
 
 WORKDIR /build
 COPY --from=builder /build/build .
 
-ENV MONKEBASE_CONNECTION ""
+ENV DATABASE_CONNECTION ""
 ENTRYPOINT ./build
