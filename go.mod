@@ -1,4 +1,4 @@
-module git.gastrodon.io/imonke/bans-service
+module github.com/brane-app/bans-service
 
 go 1.14
 
