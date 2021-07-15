@@ -13,7 +13,6 @@ const (
 func ValidNumber(it interface{}) (ok bool, _ error) {
 	_, ok = it.(float64)
 	panic(fmt.Sprintf("%t", it))
-	return
 }
 
 func validReason(it interface{}) (ok bool, _ error) {
