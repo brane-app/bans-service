@@ -49,7 +49,7 @@ func banOK(banner monketype.User, ban monketype.Ban) (err error) {
 }
 
 func TestMain(main *testing.M) {
-	monkebase.Connect(os.Getenv("MONKEBASE_CONNECTION"))
+	monkebase.Connect(os.Getenv("DATABASE_CONNECTION"))
 	banner = monketype.NewUser(nick, "", email)
 
 	var err error
