@@ -1,9 +1,9 @@
 package main
 
 import (
-	"git.gastrodon.io/imonke/monkebase"
-	"git.gastrodon.io/imonke/monkelib"
-	"git.gastrodon.io/imonke/monketype"
+	"github.com/brane-app/database-library"
+	"github.com/brane-app/tools-library"
+	"github.com/brane-app/types-library"
 	"github.com/gastrodon/groudon"
 
 	"net/http"
@@ -24,7 +24,7 @@ func createBan(request *http.Request) (code int, r_map map[string]interface{}, e
 	}
 
 	var requester string = request.Context().Value("requester").(string)
-	var ban map[string]interface{} = monketype.NewBan(
+	var ban map[string]interface{} = types.NewBan(
 		requester,
 		body.Banned,
 		body.Reason,
@@ -32,7 +32,7 @@ func createBan(request *http.Request) (code int, r_map map[string]interface{}, e
 		body.Forever,
 	).Map()
 
-	err = monkebase.WriteBan(ban)
+	err = database.WriteBan(ban)
 	code = 200
 	r_map = map[string]interface{}{"ban": ban}
 	return
@@ -41,9 +41,9 @@ func createBan(request *http.Request) (code int, r_map map[string]interface{}, e
 func readBan(request *http.Request) (code int, r_map map[string]interface{}, err error) {
 	var parts []string = strings.FieldsFunc(request.URL.Path, pathSplit)
 
-	var ban monketype.Ban
+	var ban types.Ban
 	var exists bool
-	if ban, exists, err = monkebase.ReadSingleBan(parts[len(parts)-1]); err != nil {
+	if ban, exists, err = database.ReadSingleBan(parts[len(parts)-1]); err != nil {
 		return
 	}
 
@@ -59,15 +59,15 @@ func readBan(request *http.Request) (code int, r_map map[string]interface{}, err
 }
 
 func readBansOfUser(request *http.Request) (code int, r_map map[string]interface{}, err error) {
-	var parts []string = monkelib.SplitPath(request.URL.Path)
+	var parts []string = tools.SplitPath(request.URL.Path)
 	var query map[string]interface{} = request.Context().Value("query").(map[string]interface{})
 
 	var ID string = parts[len(parts)-1]
 	var before string = query["before"].(string)
 	var size int = query["size"].(int)
 
-	var bans []monketype.Ban
-	if bans, size, err = monkebase.ReadBansOfUser(ID, before, size); err != nil {
+	var bans []types.Ban
+	if bans, size, err = database.ReadBansOfUser(ID, before, size); err != nil {
 		return
 	}
 

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"git.gastrodon.io/imonke/monkebase"
-	"git.gastrodon.io/imonke/monketype"
+	"github.com/brane-app/database-library"
+	"github.com/brane-app/types-library"
 	"github.com/google/uuid"
 
 	"bytes"
@@ -22,7 +22,7 @@ const (
 )
 
 var (
-	banner monketype.User
+	banner types.User
 )
 
 func mustMarshal(it interface{}) (data []byte) {
@@ -34,7 +34,7 @@ func mustMarshal(it interface{}) (data []byte) {
 	return
 }
 
-func banOK(banner monketype.User, ban monketype.Ban) (err error) {
+func banOK(banner types.User, ban types.Ban) (err error) {
 	if banner.ID != ban.Banner {
 		err = fmt.Errorf("ID mismatch! have: %s, want: %s", banner.ID, ban.Banner)
 		return
@@ -49,16 +49,16 @@ func banOK(banner monketype.User, ban monketype.Ban) (err error) {
 }
 
 func TestMain(main *testing.M) {
-	monkebase.Connect(os.Getenv("DATABASE_CONNECTION"))
-	banner = monketype.NewUser(nick, "", email)
+	database.Connect(os.Getenv("DATABASE_CONNECTION"))
+	banner = types.NewUser(nick, "", email)
 
 	var err error
-	if err = monkebase.WriteUser(banner.Map()); err != nil {
+	if err = database.WriteUser(banner.Map()); err != nil {
 		panic(err)
 	}
 
 	var result int = main.Run()
-	monkebase.DeleteUser(banner.ID)
+	database.DeleteUser(banner.ID)
 	os.Exit(result)
 }
 
@@ -100,7 +100,7 @@ func Test_createBan(test *testing.T) {
 	var r_map map[string]interface{}
 	var err error
 
-	var ban monketype.Ban
+	var ban types.Ban
 	var request *http.Request
 	var valued context.Context
 
@@ -118,7 +118,7 @@ func Test_createBan(test *testing.T) {
 			test.Errorf("got code %d", code)
 		}
 
-		ban = monketype.Ban{}
+		ban = types.Ban{}
 		ban.FromMap(r_map["ban"].(map[string]interface{}))
 		if err = banOK(banner, ban); err != nil {
 			test.Fatal(err)
@@ -224,7 +224,7 @@ func Test_createBan_wasBanned(test *testing.T) {
 	}
 
 	var isBanned bool
-	if isBanned, err = monkebase.IsBanned(banned); err != nil {
+	if isBanned, err = database.IsBanned(banned); err != nil {
 		test.Fatal(err)
 	}
 
@@ -234,7 +234,7 @@ func Test_createBan_wasBanned(test *testing.T) {
 }
 
 func Test_readBan(test *testing.T) {
-	var ban monketype.Ban = monketype.NewBan(
+	var ban types.Ban = types.NewBan(
 		banner.ID,
 		uuid.New().String(),
 		"Does not like splatoon",
@@ -243,7 +243,7 @@ func Test_readBan(test *testing.T) {
 	)
 
 	var err error
-	if err = monkebase.WriteBan(ban.Map()); err != nil {
+	if err = database.WriteBan(ban.Map()); err != nil {
 		test.Fatal(err)
 	}
 
@@ -262,7 +262,7 @@ func Test_readBan(test *testing.T) {
 		test.Errorf("got code %d", code)
 	}
 
-	var fetched monketype.Ban
+	var fetched types.Ban
 	fetched.FromMap(r_map["ban"].(map[string]interface{}))
 
 	if fetched.ID != ban.ID {
@@ -297,8 +297,8 @@ func Test_readBansOfUser_under(test *testing.T) {
 
 	var size, index int = 10, 0
 	for size != index {
-		monkebase.WriteBan(monketype.NewBan(banner.ID, banned, "", 0, false).Map())
-		monkebase.WriteBan(monketype.NewBan(banner.ID, uuid.New().String(), "", 0, false).Map())
+		database.WriteBan(types.NewBan(banner.ID, banned, "", 0, false).Map())
+		database.WriteBan(types.NewBan(banner.ID, uuid.New().String(), "", 0, false).Map())
 		index++
 	}
 
@@ -331,7 +331,7 @@ func Test_readBansOfUser_under(test *testing.T) {
 	}
 
 	var size_fetched int = r_map["size"].(map[string]int)["bans"]
-	var bans []monketype.Ban = r_map["bans"].([]monketype.Ban)
+	var bans []types.Ban = r_map["bans"].([]types.Ban)
 
 	if size != size_fetched {
 		test.Errorf("incorrect size fetched, %d != %d", size, size_fetched)
@@ -347,8 +347,8 @@ func Test_readBansOfUser_over(test *testing.T) {
 
 	var size, index int = 10, 0
 	for size != index {
-		monkebase.WriteBan(monketype.NewBan(banner.ID, banned, "", 0, false).Map())
-		monkebase.WriteBan(monketype.NewBan(banner.ID, uuid.New().String(), "", 0, false).Map())
+		database.WriteBan(types.NewBan(banner.ID, banned, "", 0, false).Map())
+		database.WriteBan(types.NewBan(banner.ID, uuid.New().String(), "", 0, false).Map())
 		index++
 	}
 
@@ -380,7 +380,7 @@ func Test_readBansOfUser_over(test *testing.T) {
 	}
 
 	var size_fetched int = r_map["size"].(map[string]int)["bans"]
-	var bans []monketype.Ban = r_map["bans"].([]monketype.Ban)
+	var bans []types.Ban = r_map["bans"].([]types.Ban)
 
 	if size != size_fetched {
 		test.Errorf("incorrect size fetched, %d != %d", size, size_fetched)
