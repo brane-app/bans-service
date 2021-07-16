@@ -69,7 +69,5 @@ jobs:
       - name: Build image
         uses: docker/build-push-action@v2
         with:
-          load: true
+          push: true
           tags: gastrodon/brane-${{ github.repository }}:latest
-      - name: Push image
-        run: docker push gastrodon/brane-${{ github.repository }}:latest
