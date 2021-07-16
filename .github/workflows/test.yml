@@ -19,4 +19,9 @@ jobs:
         env:
           DATABASE_CONNECTION: "root:foobar2000@tcp(localhost)/brane"
           NO_FERROTHORN: "true"
-        run: go test ./... -count 1 -cover -coverpkg ./...
+        run: go test ./... -count 1 -cover -coverprofile /tmp/coverage -coverpkg ./...
+      - name: Upload coverage
+        uses: codecov/codecov-action@v1
+        with:
+          files: /tmp/coverage
+          fail_ci_if_error: true
