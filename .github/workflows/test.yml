@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  test:
+    container: golang:alpine
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Set up testing database
+        uses: mirromutth/mysql-action@v1.1
+        with:
+          mysql database: brane
+          mysql root password: foobar2000
+      - name: Run tests
+        env:
+          DATABASE_CONNECTION: "root:foobar2000@tcp(localhost)/brane"
+          NO_FERROTHORN: "true"
+        run: go test ./... -count 1 -cover -coverpkg ./...
