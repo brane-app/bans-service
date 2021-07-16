@@ -32,9 +32,9 @@ jobs:
           mysql database: brane
           mysql root password: foobar2000
       - name: Check out code
+        uses: actions/checkout@v2
       - name: Get dependencies
         run: go get ./...
-        uses: actions/checkout@v2
       - name: Run tests
         env:
           DATABASE_CONNECTION: "root:foobar2000@tcp(localhost)/brane"
