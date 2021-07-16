@@ -56,7 +56,7 @@ jobs:
           fail_ci_if_error: true
 
   docker:
-    if: ${{ github.ref == 'refs/heads/master' }}
+    if: github.ref == 'refs/heads/master' && github.head_ref == ''
     runs-on: ubuntu-latest
     needs:
       - build
