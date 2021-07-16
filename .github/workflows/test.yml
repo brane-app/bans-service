@@ -14,8 +14,6 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
-        uses: actions/checkout@v2
       - name: Set up testing database
         uses: mirromutth/mysql-action@v1.1
         with:
@@ -36,6 +34,8 @@ jobs:
       - get
       - setup
     steps:
+      - name: Check out code
+        uses: actions/checkout@v2
       - name: Build package
         run: go build -o job-build-out .
 
@@ -45,6 +45,8 @@ jobs:
       - get
       - setup
     steps:
+      - name: Check out code
+        uses: actions/checkout@v2
       - name: Run tests
         env:
           DATABASE_CONNECTION: "root:foobar2000@tcp(localhost)/brane"
