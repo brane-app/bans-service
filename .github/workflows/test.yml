@@ -26,9 +26,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Get dependencies
-        run: go get ./...
+        run: GOPROXY=direct go get ./...
       - name: Build package
-        run: go build -o job-build-out .
+        run: GOPROXY=direct go build -o job-build-out .
 
   test:
     runs-on: ubuntu-latest
@@ -43,12 +43,12 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Get dependencies
-        run: go get ./...
+        run: GOPROXY=direct go get ./...
       - name: Run tests
         env:
           DATABASE_CONNECTION: "root:foobar2000@tcp(localhost)/brane"
           NO_FERROTHORN: "true"
-        run: go test ./... -count 1 -cover -coverprofile /tmp/coverage -coverpkg ./...
+        run: GOPROXY=direct go test ./... -count 1 -cover -coverprofile /tmp/coverage -coverpkg ./...
       - name: Upload coverage
         uses: codecov/codecov-action@v1
         with:
