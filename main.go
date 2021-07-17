@@ -14,6 +14,9 @@ func main() {
 
 	register_handlers()
 
-	http.Handle(os.Getenv("PATH_PREFIX")+"/", http.HandlerFunc(groudon.Route))
+	prefix := os.Getenv("PATH_PREFIX")
+	log.Printf("Routing with a prefix %s\n", prefix)
+
+	http.Handle("/", http.HandlerFunc(groudon.Route))
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
