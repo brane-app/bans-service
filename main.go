@@ -9,9 +9,14 @@ import (
 	"os"
 )
 
+func health_check(_ *http.Request) (int, map[string]interface{}, error) {
+	return 204, nil, database.Health()
+}
+
 func main() {
 	database.Connect(os.Getenv("DATABASE_CONNECTION"))
 
+	groudon.AddHandler("GET", "^/health/?$", health_check)
 	register_handlers()
 
 	prefix := os.Getenv("PATH_PREFIX")
