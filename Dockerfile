@@ -3,6 +3,8 @@ FROM golang:alpine as builder
 WORKDIR /build
 COPY . .
 
+RUN apk add --no-cache git
+
 ARG GOARCH="amd64"
 ARG GOOS="linux"
 RUN GOPROXY=direct go get -u ./... && \
