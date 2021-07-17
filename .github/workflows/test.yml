@@ -26,7 +26,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Get dependencies
-        run: GOPROXY=direct go get ./...
+        run: GOPROXY=direct go get -u ./...
       - name: Build package
         run: GOPROXY=direct go build -o job-build-out .
 
@@ -43,7 +43,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Get dependencies
-        run: GOPROXY=direct go get ./...
+        run: GOPROXY=direct go get -u ./...
       - name: Run tests
         env:
           DATABASE_CONNECTION: "root:foobar2000@tcp(localhost)/brane"
