@@ -15,14 +15,6 @@ jobs:
         run: echo ${{ github.head_ref }}
       - name: Go version
         run: go version
-      - name: Dockerhub username exists
-        run: echo ${{ secrets.DOCKERHUB_USERNAME }} | wc -c
-      - name: Dockerhub token exists
-        run: echo ${{ secrets.DOCKERHUB_TOKEN }} | wc -c
-      - name: AWS access key id exists
-        run: echo ${{ secrets.AWS_ACCESS_KEY_ID }} | wc -c
-      - name: AWS access key secret exists
-        run: echo ${{ secrets.AWS_SECRET_ACCESS_KEY }} | wc -c
 
   awscli:
     runs-on: ubuntu-latest
