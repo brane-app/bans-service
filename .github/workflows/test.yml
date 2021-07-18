@@ -36,7 +36,7 @@ jobs:
       - name: Unzip
         run: unzip -d /tmp/awscli /tmp/awscliv2.zip
       - name: Install
-        run: sudo /tmp/awscli/aws/install
+        run: sudo /tmp/awscli/aws/install --update
 
   build:
     runs-on: ubuntu-latest
