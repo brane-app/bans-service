@@ -31,12 +31,12 @@ jobs:
         run: >-
           sudo apt-get update &&
           sudo apt-get install curl unzip
-    - name: Get zip
-      run: curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o /tmp/awscliv2.zip
-    - name: Unzip
-      run: unzip -d /tmp/awscli /tmp/awscliv2.zip
-    - name: Install
-      run: sudo /tmp/awscli/aws/install
+      - name: Get zip
+        run: curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o /tmp/awscliv2.zip
+      - name: Unzip
+        run: unzip -d /tmp/awscli /tmp/awscliv2.zip
+      - name: Install
+        run: sudo /tmp/awscli/aws/install
 
   build:
     runs-on: ubuntu-latest
