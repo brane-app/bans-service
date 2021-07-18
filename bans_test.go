@@ -10,7 +10,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"os"
 	"strings"
 	"testing"
 	"time"
@@ -48,18 +47,13 @@ func banOK(banner types.User, ban types.Ban) (err error) {
 	return
 }
 
-func TestMain(main *testing.M) {
-	database.Connect(os.Getenv("DATABASE_CONNECTION"))
+func setup(main *testing.M) {
 	banner = types.NewUser(nick, "", email)
 
 	var err error
 	if err = database.WriteUser(banner.Map()); err != nil {
 		panic(err)
 	}
-
-	var result int = main.Run()
-	database.DeleteUser(banner.ID)
-	os.Exit(result)
 }
 
 func Test_createBan(test *testing.T) {
