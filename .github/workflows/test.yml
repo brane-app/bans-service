@@ -103,7 +103,7 @@ jobs:
     strategy:
       matrix:
         repo:
-          - public.ecr.aws/v6g1e4z1/brane-${{ github.event.repository.name }}
+          - public.ecr.aws/v6g1e4z1/brane-live/${{ github.event.repository.name }}
         tag:
           - latest
     steps:
