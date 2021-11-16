@@ -10,6 +10,7 @@ import (
 var (
 	prefix = os.Getenv("PATH_PREFIX")
 
+	routeRoot           = "^" + prefix + "/?$"
 	readBanRoute        = "^" + prefix + "/id/" + groudon.UUID_PATTERN + "/?$"
 	readBansOfUserRoute = "^" + prefix + "/user/id/" + groudon.UUID_PATTERN + "/?$"
 
@@ -27,7 +28,7 @@ func register_handlers() {
 
 	groudon.AddMiddleware("GET", readBansOfUserRoute, middleware.PaginationParams)
 
-	groudon.AddHandler("POST", "^"+prefix+"/$", createBan)
+	groudon.AddHandler("POST", routeRoot, createBan)
 	groudon.AddHandler("GET", readBanRoute, readBan)
 	groudon.AddHandler("GET", readBansOfUserRoute, readBansOfUser)
 }
