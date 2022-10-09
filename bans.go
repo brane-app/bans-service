@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/brane-app/database-library"
-	"github.com/brane-app/tools-library"
-	"github.com/brane-app/types-library"
+	"github.com/brane-app/librane/database"
+	"github.com/brane-app/librane/tools"
+	"github.com/brane-app/librane/types"
 	"github.com/gastrodon/groudon/v2"
 
 	"net/http"
